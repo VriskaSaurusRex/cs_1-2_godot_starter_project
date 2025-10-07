@@ -22,7 +22,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	player=body
 	if body.name=="Player":
 		in_range=true
-	
+	body=player
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
