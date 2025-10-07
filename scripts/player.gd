@@ -8,6 +8,8 @@ var facing = "down"
 var ySpeed = 300.0
 var yDirection = 0
 var coins = 0
+var is_attacking=false
+var attack_cooldown = 0.67
 @export var offset : Vector2 = Vector2(0, -25)
 
 # TODO: Add health system variables
@@ -16,8 +18,18 @@ var health = maxHealth
 
 func _ready() -> void:
 	pass
-
+func on_body_entered(body):
+	
+		pass
 func _physics_process(_delta):
+	if Input.is_action_just_pressed("ui_accept"):
+			is_attacking=true
+	if is_attacking:
+		attack_cooldown-=_delta
+		if attack_cooldown<0:
+			is_attacking=false
+			attack_cooldown=.67
+			print("Hey! This works")
 	# TODO: Get horizontal input (left/right keys)
 	# Input.get_axis checks two keys and gives us a number:
 	# - When LEFT is pressed: returns -1.0
