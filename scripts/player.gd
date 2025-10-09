@@ -9,7 +9,7 @@ var ySpeed = 300.0
 var yDirection = 0
 var coins = 0
 var is_attacking=false
-var attack_cooldown = 0.67
+var attack_cooldown = 0.68
 @export var offset : Vector2 = Vector2(0, -25)
 
 # TODO: Add health system variables

@@ -66,10 +66,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qylyk"]
-size = Vector2(10, 11)
+size = Vector2(3, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgrfj"]
-radius = 38.052597
+radius = 220.18402
 
 [node name="MinoTauret6" type="CharacterBody2D"]
 script = ExtResource("1_fgrfj")
@@ -79,13 +79,13 @@ sprite_frames = SubResource("SpriteFrames_l45e7")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 10)
+position = Vector2(2.5, 8)
 shape = SubResource("RectangleShape2D_qylyk")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Detection radius" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 0)
+position = Vector2(3, -1)
 shape = SubResource("CircleShape2D_fgrfj")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
