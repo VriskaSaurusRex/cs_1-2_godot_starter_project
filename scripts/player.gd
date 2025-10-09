@@ -28,7 +28,7 @@ func _physics_process(_delta):
 		attack_cooldown-=_delta
 		if attack_cooldown<0:
 			is_attacking=false
-			attack_cooldown=.67
+			attack_cooldown=0.67
 			print("Hey! This works")
 	# TODO: Get horizontal input (left/right keys)
 	# Input.get_axis checks two keys and gives us a number:
