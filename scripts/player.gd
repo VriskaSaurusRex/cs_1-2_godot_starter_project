@@ -11,6 +11,8 @@ var coins = 0
 var is_attacking=false
 var attack_cooldown = 0.68
 @export var offset : Vector2 = Vector2(0, -25)
+var enemy=null
+
 
 # TODO: Add health system variables
 var maxHealth = 10
@@ -90,7 +92,6 @@ func change_health(_amount:int):
 		if health > maxHealth:
 			health = maxHealth
 		print("Health: ", health)
-
 func change_coins(_amount:int):
 	coins += _amount
 	print("you have " +str(coins) +" coins")
@@ -111,5 +112,3 @@ func shoot():
 	
 	# TODO: Add projectile to the game world
 	get_tree().get_root().add_child(projectile_clone)
-
-	pass

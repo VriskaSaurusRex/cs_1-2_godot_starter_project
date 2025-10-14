@@ -1,5 +1,5 @@
 extends Area2D
-var speed = 300
+var speed = 1
 var direction
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -13,3 +13,4 @@ func set_direction(target):
 	direction = position.direction_to(target)
 func _physics_process(_delta):
 	position += speed * direction * _delta
+	speed = speed * 1.1
