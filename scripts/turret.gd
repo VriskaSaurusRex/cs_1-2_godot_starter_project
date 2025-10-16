@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var projectile_original = preload("res://scenes/enemy_projectile.tscn")
-var start_time = 0
+var start_time = 0.67
 var timer = start_time
 var in_range = false
 var player
@@ -28,7 +28,9 @@ pass # Replace with function body.
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.name == "Player":
+		player = body
+		in_range = false
 func shoot(target):
 	var projectile_clone = projectile_original.instantiate()
 	projectile_clone.global_position = position

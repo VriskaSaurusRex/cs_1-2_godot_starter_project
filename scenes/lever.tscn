@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bl5vm2j0n6sxa" path="res://sprites/items/ALever.png" id="1_iorl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kcve"]
-size = Vector2(58, 27)
+size = Vector2(77, 48.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flenb"]
 atlas = ExtResource("1_iorl1")
@@ -36,13 +36,12 @@ animations = [{
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(9.5, -25.75)
 shape = SubResource("RectangleShape2D_1kcve")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-41, -65)
 sprite_frames = SubResource("SpriteFrames_3d23c")
 animation = &"on"
-frame_progress = 0.527
 centered = false
 offset = Vector2(12, 0)

@@ -798,8 +798,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ptgn0"]
-radius = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(20, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 
@@ -813,10 +813,11 @@ animation = &"idle_up"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
-shape = SubResource("CircleShape2D_ptgn0")
+position = Vector2(0, -13.5)
+shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_qhqgy")
