@@ -10,3 +10,7 @@ func on_body_entered(body):
 	if body==player:
 		inrange=true
 		print("lever")
+		on=true
+func update_animation():
+	if Input.is_action_just_pressed("ui_select"):
+		_animation_lever

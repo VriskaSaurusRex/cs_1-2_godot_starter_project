@@ -95,6 +95,7 @@ func change_health(_amount:int):
 func change_coins(_amount:int):
 	coins += _amount
 	print("you have " +str(coins) +" coins")
+#INTERACTION TIME BABYYYYYYYYYY B3
 
 func die():
 	print("you died")
