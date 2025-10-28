@@ -11,6 +11,8 @@ var coins = 0
 var is_attacking=false
 var attack_cooldown = 0.68
 @export var offset : Vector2 = Vector2(0, -25)
+@onready var melee_hitbox: Area2D=$Melee
+@onready var collision_shape_2d: CollisionShape2D=$Melee/CollisionShape2D
 var enemy=null
 
 
@@ -31,7 +33,7 @@ func _physics_process(_delta):
 		if attack_cooldown<0:
 			is_attacking=false
 			attack_cooldown=0.67
-			print("Hey! This works")
+			
 	# TODO: Get horizontal input (left/right keys)
 	# Input.get_axis checks two keys and gives us a number:
 	# - When LEFT is pressed: returns -1.0
@@ -48,7 +50,19 @@ func _physics_process(_delta):
 	#velocity is a vector, define it as a product of speed and direction
 	velocity.x = xDirection * xSpeed
 	velocity.y = yDirection * ySpeed
-	
+	#Melee
+	if xDirection > 0:
+		facing = "right"
+		melee_hitbox.position=Vector2(30,0)
+	elif xDirection < 0:
+		facing = "left"
+		melee_hitbox.position=Vector2(-30,0)
+	elif yDirection < 0:
+		facing = "up"
+		melee_hitbox.position=Vector2(0,-30)
+	elif yDirection > 0:
+		facing = "down"
+		melee_hitbox.position=Vector2(0,30)
 	# TODO: Update facing direction based on movement
 	if xDirection > 0:
 		facing = "right"
@@ -61,7 +75,16 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("ui_select"):
 		shoot()
-	
+		attack_cooldown-=_delta
+		if attack_cooldown<0:
+			attack_cooldown=0.67
+	if Input.is_action_just_pressed("ui_accept"):
+		is_attacking=true
+	if is_attacking==true:
+		attack_cooldown-=_delta
+	if attack_cooldown<0:
+		is_attacking=false
+		attack_cooldown=0.67
 	# call the animation function
 	update_animation()
 	
@@ -72,16 +95,15 @@ func _physics_process(_delta):
 # TODO: Create animation function (add this outside of _physics_process)
 func update_animation():
 	# TODO: Set the animation based on the facing direction
-	if velocity.is_zero_approx():
-		_animation_player.play("idle_" + facing)
-	# This combines "idle_" with whatever direction we're facing
-		pass
-	elif !velocity.is_zero_approx():
-		#walking animation here
-		_animation_player.play("walk_" + facing)
-		pass
+	if is_attacking:
+		_animation_player.play("attack_" + facing)
+	else:
+		if velocity.is_zero_approx():
+			_animation_player.play("idle_" + facing)
+		elif !velocity.is_zero_approx():
+			_animation_player.play("walk_" + facing)
 		
-	
+
 
 
 # TODO: Create health change function for interactions

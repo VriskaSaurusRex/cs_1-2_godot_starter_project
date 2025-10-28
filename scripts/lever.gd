@@ -1,16 +1,10 @@
-extends Node
+extends Area2D
 var on=false
-var inrange=false
-var player
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_select"):
+@onready var _animation_player: AnimatedSprite2D = $AnimatedSprite2D
+
+
+func _on_body_entered(body):
+	if body.name=="Player":
 		on=true
-		print("Lever :3")
-func on_body_entered(body):
-	if body==player:
-		inrange=true
 		print("lever")
-		on=true
-func update_animation():
-	if Input.is_action_just_pressed("ui_select"):
-		_animation_lever
+		
