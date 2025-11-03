@@ -2,10 +2,10 @@ extends CharacterBody2D
 @onready var _animation_player: AnimatedSprite2D = $AnimatedSprite2D
 var projectile_original = preload("res://scenes/projectile.tscn")
 
-var xSpeed = 300.0
+var xSpeed = 300
 var xDirection = 0
 var facing = "down"
-var ySpeed = 300.0
+var ySpeed = 300
 var yDirection = 0
 var coins = 0
 var is_attacking=false
