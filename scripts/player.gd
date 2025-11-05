@@ -91,7 +91,8 @@ func _physics_process(_delta):
 	
 	# This is a special Godot function that makes the movement happen
 	move_and_slide()
-
+	if Input.is_action_just_pressed("press_z"):
+		die()
 # TODO: Create animation function (add this outside of _physics_process)
 func update_animation():
 	# TODO: Set the animation based on the facing direction
@@ -104,7 +105,8 @@ func update_animation():
 			_animation_player.play("walk_" + facing)
 		
 
-
+	if coins==18:
+		die()
 
 # TODO: Create health change function for interactions
 func change_health(_amount:int):
@@ -122,6 +124,7 @@ func change_coins(_amount:int):
 func die():
 	print("you died")
 	queue_free()
+	get_tree().reload_current_scene()
 # TODO: Create shooting function
 func shoot():
 	# TODO: Create a new projectile instance

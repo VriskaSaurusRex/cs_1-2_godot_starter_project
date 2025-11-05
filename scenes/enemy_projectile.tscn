@@ -47,6 +47,7 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_e8ik0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_ok8aq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
