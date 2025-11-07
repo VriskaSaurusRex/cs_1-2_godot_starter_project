@@ -18,3 +18,5 @@ func _on_chase_body_entered(body:Node2D)->void:
 	melee=false
 	shoot=false
 	print("chase works")
+func _on_chase_body_exited(body:Node2D)->void:
+	pass

@@ -4,6 +4,7 @@ var start_time = 0.67
 var timer = start_time
 var in_range = false
 var player
+var set_direction
 func _ready():
 
 	pass

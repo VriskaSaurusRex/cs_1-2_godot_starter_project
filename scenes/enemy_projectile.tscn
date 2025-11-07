@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccndc0shs6mym"]
+[gd_scene load_steps=8 format=3 uid="uid://ccndc0shs6mym"]
 
-[ext_resource type="Script" uid="uid://cl28htfterbk4" path="res://scripts/enemy_projectile.gd" id="1_e8ik0"]
 [ext_resource type="Texture2D" uid="uid://lah76qx23g3n" path="res://sprites/items/turret_projectile.png" id="2_e8ik0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ok8aq"]
@@ -44,7 +43,6 @@ animations = [{
 
 [node name="Enemy_projectile" type="Area2D"]
 scale = Vector2(0.4, 0.4)
-script = ExtResource("1_e8ik0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.99999994, 0.99999994)

@@ -1029,15 +1029,15 @@ disabled = true
 
 [node name="Melee" type="Area2D" parent="."]
 
-[node name="shortrange" type="CollisionShape2D" parent="Melee"]
+[node name="meleerange" type="CollisionShape2D" parent="Melee"]
 shape = SubResource("CircleShape2D_vltjp")
 
 [node name="shoot" type="Area2D" parent="."]
 
-[node name="midrange" type="CollisionShape2D" parent="shoot"]
+[node name="shootrange" type="CollisionShape2D" parent="shoot"]
 shape = SubResource("CircleShape2D_adppo")
 
 [node name="chase" type="Area2D" parent="."]
 
-[node name="longrange" type="CollisionShape2D" parent="chase"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chase"]
 shape = SubResource("CircleShape2D_uk8e4")
