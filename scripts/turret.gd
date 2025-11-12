@@ -37,5 +37,4 @@ func shoot(target):
 	var projectile_clone = projectile_original.instantiate()
 	projectile_clone.global_position = position
 	projectile_clone.set_direction(target.position)
-
 	get_tree().get_root().add_child(projectile_clone)
