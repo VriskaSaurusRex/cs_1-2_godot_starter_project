@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwo2tsegwct04"]
 
-[ext_resource type="Script" uid="uid://n6ipgto0ijdb" path="res://scripts/turret.gd" id="1_fgrfj"]
+[ext_resource type="Script" uid="uid://ctub2knno8lri" path="res://scenes/mini_tauret.gd" id="1_fgrfj"]
 [ext_resource type="Texture2D" uid="uid://dat7h57mxtul0" path="res://sprites/items/turret.png" id="1_sqxf6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0aqd3"]

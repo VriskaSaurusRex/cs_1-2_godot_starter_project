@@ -3,10 +3,10 @@ extends CharacterBody2D
 var projectile_original = preload("res://scenes/projectile.tscn")
 
 var xSpeed = 300
-var xDirection = 0
+var xDirection = 300
 var facing = "down"
 var ySpeed = 300
-var yDirection = 0
+var yDirection =300
 var coins = 0
 var is_attacking=false
 var attack_cooldown = 0.68

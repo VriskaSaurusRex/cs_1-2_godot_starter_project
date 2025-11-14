@@ -1006,10 +1006,10 @@ animations = [{
 radius = 32.140316
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_adppo"]
-radius = 108.37435
+radius = 202.12125
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uk8e4"]
-radius = 206.28621
+radius = 125.39936
 
 [node name="MeleeMinotaur" type="CharacterBody2D"]
 script = ExtResource("1_vltjp")
@@ -1018,8 +1018,6 @@ script = ExtResource("1_vltjp")
 sprite_frames = SubResource("SpriteFrames_xx5td")
 animation = &"crossbow_shoot_right"
 autoplay = "crossbow_shoot_right"
-frame = 7
-frame_progress = 0.985295
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 8)
@@ -1039,5 +1037,6 @@ shape = SubResource("CircleShape2D_adppo")
 
 [node name="chase" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chase"]
+[node name="chaserange" type="CollisionShape2D" parent="chase"]
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_uk8e4")
